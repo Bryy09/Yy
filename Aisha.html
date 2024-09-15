@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Chat Clone</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e5ddd5;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            max-width: 800px;
+            margin: auto;
+            border: 1px solid #ddd;
+            background-color: white;
+        }
+
+        .header {
+            background-color: #075E54;
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .chat-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+            background-color: #e5ddd5;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .message.sent {
+            justify-content: flex-end;
+        }
+
+        .message .bubble {
+            max-width: 60%;
+            padding: 10px;
+            border-radius: 20px;
+            color: white;
+            font-size: 0.9em;
+            line-height: 1.4;
+            position: relative;
+        }
+
+        .message.sent .bubble {
+            background-color: #075E54;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: 20px;
+        }
+
+        .message.received .bubble {
+            background-color: #ffffff;
+            color: #000000;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 20px;
+        }
+
+        .message .bubble::after {
+            content: '';
+            position: absolute;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent;
+            z-index: 1;
+        }
+
+        .message.sent .bubble::after {
+            right: -10px;
+            top: 50%;
+            border-left-color: #075E54;
+            border-right: none;
+            border-top: none;
+            margin-top: -5px;
+        }
+
+        .message.received .bubble::after {
+            left: -10px;
+            top: 50%;
+            border-right-color: #ffffff;
+            border-left: none;
+            border-top: none;
+            margin-top: -5px;
+        }
+
+        .message .sender {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .footer {
+            border-top: 1px solid #ddd;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+        }
+
+        .footer input {
+            flex: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+            outline: none;
+        }
+
+        .footer button {
+            background-color: #075E54;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-left: 10px;
+            border-radius: 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .footer button:hover {
+            background-color: #064d40;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://via.placeholder.com/50" alt="Profile Picture">
+            <h2>Aisaha</h2>
+        </div>
+        <div class="chat-container">
+            <div class="message received">
+                <div class="bubble">
+                    <span class="sender">Aisaha:</span>
+                    Hai! Apa kabar
+                </div>
+            </div>
+            <div class="message sent">
+                <div class="bubble">
+                    Hai! Aku baik
+                </div>
+            </div>
+            <div class="message received">
+                <div class="bubble">
+                    <span class="sender">Aisaha:</span>
+                    mau mabar gak?
+                </div>
+            </div>
+            <div class="message sent">
+                <div class="bubble">
+                    ayo,aku mau mbak
+                </div>
+            </div>
+            <div class="message received">
+                <div class="bubble">
+                    <span class="sender">Aisaha:</span>
+                    mabar apa?
+                </div>
+            </div>
+            <div class="message sent">
+                <div class="bubble">
+                    mabar pou
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <input type="text" placeholder="Ketik pesan...">
+            <button>Kirim</button>
+        </div>
+    </div>
+</body>
+</html>
